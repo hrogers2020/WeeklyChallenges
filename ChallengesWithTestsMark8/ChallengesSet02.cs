@@ -14,20 +14,41 @@ namespace ChallengesWithTestsMark8
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            bool answer = false;
-            if (vals is null)
-            {
-                return answer;
-            }
             if (vals.Length % 2 == 0)
             {
                 return true;
             }
-            return answer;
+
+            return false;
+
+           //bool answer = false;
+           // if (vals is null)
+           // {
+           //     return answer;
+           // }
+           // if (vals.Length % 2 == 0)
+           // {
+           //     return true;
+           // }
+           // return answer;
         }
 
         public bool IsNumberEven(int number)
         {
+            //hit a wall or cant figure it out
+            //break it down as small as possible
+            //Do I know what this is asking me?....no?
+                //return type:
+                    // I know I need to return a T or F answer
+                //parameter:
+                    //I know they are giving me a number
+                //method name:
+                    //Is that number even?
+                //odd return false
+
+            //how do I determine if number is odd or even?
+
+
             if (number % 2 == 0)
             {
                 return true;
@@ -53,7 +74,7 @@ namespace ChallengesWithTestsMark8
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
             //double Max = 0;
-            if (numbers is null || numbers.Count() == 0)
+            if ( numbers == null || numbers.Count() == 0)
             {
                 return 0;
             }
@@ -61,7 +82,7 @@ namespace ChallengesWithTestsMark8
 
 
 
-
+            
 
             //if (numbers.Count is null)
             //{
@@ -87,18 +108,21 @@ namespace ChallengesWithTestsMark8
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            if (str1.Length < str2.Length)
+           if (str1.Length < str2.Length)
             {
                 return str1.Length;
             }
-            else
+           else
             {
                 return str2.Length;
             }
+
         }
 
         public int Sum(int[] numbers)
         {
+            //Linq
+            //return numbers.Sum();                          
             int answer = 0;
             if (numbers is null)
             {
@@ -113,19 +137,21 @@ namespace ChallengesWithTestsMark8
 
         public int SumEvens(int[] numbers)
         {
-            if ( numbers is null)
+            if (numbers is null)
             {
                 return 0;
             }
-            int answer = 0;
-            foreach (var number in numbers)
-            {
-                if (number % 2 == 0)
-                {
-                    answer += number;
-                }
-            }
-            return answer;
+            //int answer = 0;
+            //foreach (var number in numbers)
+            //{
+            //    if (number % 2 == 0)
+            //    {
+            //        answer += number;
+            //    }
+            //}
+            //return answer;
+            //Linq
+            return numbers.Where(number => number % 2 == 0).Sum();
         }
 
         public bool IsSumOdd(List<int> numbers)
@@ -134,19 +160,21 @@ namespace ChallengesWithTestsMark8
             {
                 return false;
             }
-            int sum = 0;
-            foreach (var number in numbers)
-            {
-                sum += number;
-            }
-            if (sum % 2 == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return (numbers.Sum() % 2 != 0);
+
+            //int sum = 0;
+            //foreach (var number in numbers)
+            //{
+            //    sum += number;
+            //}
+            //if (sum % 2 == 0)
+            //{
+            //    return false;
+            //}
+            //else
+            //{
+            //    return true;
+            //}
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
