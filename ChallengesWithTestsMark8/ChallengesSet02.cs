@@ -18,7 +18,6 @@ namespace ChallengesWithTestsMark8
             {
                 return true;
             }
-
             return false;
 
            //bool answer = false;
@@ -47,16 +46,11 @@ namespace ChallengesWithTestsMark8
                 //odd return false
 
             //how do I determine if number is odd or even?
-
-
-            if (number % 2 == 0)
+            if (number % 2 ==0)
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         public bool IsNumberOdd(int num)
@@ -65,16 +59,13 @@ namespace ChallengesWithTestsMark8
             {
                 return false;
             }
-            else
-            {
-                return true;
-            }
+            return true;
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
             //double Max = 0;
-            if ( numbers == null || numbers.Count() == 0)
+            if (numbers == null || numbers.Count() == 0)
             {
                 return 0;
             }
@@ -108,23 +99,25 @@ namespace ChallengesWithTestsMark8
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-           if (str1.Length < str2.Length)
+            if (str1.Length < str2.Length)
             {
                 return str1.Length;
             }
-           else
-            {
-                return str2.Length;
-            }
+            return str2.Length;
+            
 
         }
 
         public int Sum(int[] numbers)
         {
             //Linq
+            //if (numbers == null)
+            //{
+            //    return 0;
+            //}
             //return numbers.Sum();                          
             int answer = 0;
-            if (numbers is null)
+            if (numbers == null)
             {
                 return 0;
             }
@@ -132,6 +125,10 @@ namespace ChallengesWithTestsMark8
             {
                 answer += number;
             }
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //    answer += numbers[i];
+            //}
             return answer;
         }
 
@@ -179,11 +176,22 @@ namespace ChallengesWithTestsMark8
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            if (number < 0)
+            if ( number < 0)
             {
                 return 0;
             }
             return number / 2;
+
+            //OR
+            //long count = 0;
+
+            //for (long i = number; i >= 0; i--)
+            //{
+            //    if (i% 2 != 0)
+            //    {
+            //        count += i;
+            //    }
+            //}
         }
     }
 }
